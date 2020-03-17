@@ -8,6 +8,7 @@ resources:
 
 namespace: default
 
+namePrefix: play-
 commonLabels:
   app: example
   env: test
@@ -15,3 +16,8 @@ commonLabels:
 images:
   - name: containous/whoami
     newTag: v1.5.0
+
+configMapGenerator:
+  - name: foo-props
+    literals:
+      - VAR_FOO=bar

@@ -16,6 +16,9 @@ spec:
       containers:
         - name: whoami
           image: containous/whoami
+          envFrom:
+            - configMapRef:
+                name: foo-props
           ports:
             - name: http
               containerPort: 80

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whoami
+  labels:
+    component: whoami
+spec:
+  selector:
+    matchLabels:
+      component: whoami
+  template:
+    metadata:
+      labels:
+        component: whoami
+    spec:
+      containers:
+        - name: whoami
+          image: containous/whoami
+          ports:
+            - name: http
+              containerPort: 80
